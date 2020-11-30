@@ -1,0 +1,39 @@
+apiVersion: core.jenkins-x.io/v4beta1
+kind: Requirements
+spec:
+  autoUpdate:
+    enabled: false
+    schedule: ""
+  cluster:
+    clusterName: todo
+    devEnvApprovers:
+    - todo
+    environmentGitOwner: todo
+    gitKind: github
+    gitName: github
+    gitServer: https://github.com
+    project: todo
+    provider: gke
+    registry: gcr.io
+    zone: europe-west1-b
+  environments:
+  - key: dev
+  - key: staging
+  - key: production
+  ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  repository: nexus
+  secretStorage: vault
+  storage:
+  - name: backup
+    url: https://foo.bar
+  - name: reports
+    url: https://wine.cheese
+  vault: {}
+  webhook: lighthouse

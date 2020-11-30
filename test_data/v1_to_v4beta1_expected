@@ -5,7 +5,7 @@ import (
 	"github.com/jenkins-x/jx-api/v4/pkg/apis/core/v4beta1"
 	"github.com/jenkins-x/jx-api/v4/pkg/apis/core"
 	jxcore "github.com/jenkins-x/jx-api/v4/pkg/apis/core/v4beta1"
-	"FIX_ME_CONFIG_HAS_MOVED_TO jxcore github.com/jenkins-x/jx-api/v4/pkg/apis/core/v4beta1"
+	jxcore "github.com/jenkins-x/jx-api/v4/pkg/apis/core/v4beta1"
 )
 
 func foo () {
@@ -14,4 +14,5 @@ func foo () {
     jxcore.LoadRequirementsConfig
     o.JXClient.CoreV4beta1().PipelineActivities(o.Namespace)
     jxcore.NewRequirementsConfig()
+    jxcore.GetRequirementsConfigFromTeamSettings
 }
