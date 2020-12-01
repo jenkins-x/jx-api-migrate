@@ -94,21 +94,15 @@ func visitRequirements(path string, fi os.FileInfo, err error) error {
 		return nil //
 	}
 
-	//if fi.Name() == "jx-requirements.yml" {
-	//	read, err := ioutil.ReadFile(path)
-	//	if err != nil {
-	//		panic(err)
-	//	}
-	//
-	//}
-
-	reqs, err := jxcore.LoadRequirementsConfigFile(path, false)
-	if err != nil {
-		panic(err)
-	}
-	err = reqs.SaveConfig(path)
-	if err != nil {
-		panic(err)
+	if fi.Name() == "jx-requirements.yml" {
+		reqs, err := jxcore.LoadRequirementsConfigFile(path, false)
+		if err != nil {
+			panic(err)
+		}
+		err = reqs.SaveConfig(path)
+		if err != nil {
+			panic(err)
+		}
 	}
 
 	return nil
